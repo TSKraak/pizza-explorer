@@ -1,11 +1,14 @@
 import React from "react";
+import "./App.css";
+import AddPizzaForm from "./components/AddPizzaForm";
+import Pizzalist from "./components/Pizzalist";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>Hello</p>
-      </header>
+      <h1>Welcome!</h1>
+      <Pizzalist />
+      <AddPizzaForm />
     </div>
   );
 }
