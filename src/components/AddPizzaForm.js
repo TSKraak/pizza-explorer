@@ -1,9 +1,8 @@
 // src/components/AddPizzaForm.js
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import "./AddPizzaForm.scss";
 
-// const redux = require("redux");
-// const { reducer } = require("../store/reducer");
 const randomId = Math.floor(Math.random() * 100 + 1);
 
 export default function AddPizzaForm() {
@@ -35,7 +34,7 @@ export default function AddPizzaForm() {
   };
 
   return (
-    <form onSubmit={submit}>
+    <form className="pizza-form" onSubmit={submit}>
       <h2>Add a new pizza</h2>
       <p>
         <label>
