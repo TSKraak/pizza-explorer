@@ -2,6 +2,7 @@
 const initialState = {
   user: {
     name: "Helva",
+    favorites: [161235, 357311],
   },
   pizzas: [
     {
@@ -45,6 +46,28 @@ export default function reducer(state = initialState, action) {
             bought: 0,
           },
         ],
+      };
+    }
+    case "TOGGLE_FAVORITE_PIZZA": {
+      if (state.user.favorites.includes(action.payload)) {
+        const removeFavorite = state.user.favorites.filter((favorite) => {
+          return favorite !== action.payload;
+        });
+        return {
+          ...state,
+          user: {
+            ...state.user,
+            favorites: removeFavorite,
+          },
+        };
+      }
+
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          favorites: [...state.user.favorites, action.payload],
+        },
       };
     }
     default: {
